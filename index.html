@@ -2,42 +2,72 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Singolo</title>
         <link rel="stylesheet" href="style.css">
+        
     </head>
     <body>
         <header>
-            <div class="logo">
-                <h1>SINGOLO</h1><span>*</span>
+            <div class="fixed-header">
+                <div class="burger_logo">
+
+                    <div class="burger" style="transform: rotate(0deg);">
+                        <span></span>
+                    </div>
+
+                    <div class="logo">
+                        <h1>SINGOLO</h1><span>*</span>
+                    </div>
+                    <nav class="navbar">
+                        <ul>
+                            <li class="li">
+                                <a href="#home">HOME</a>
+                            </li>
+                            <li class="li">
+                                <a href="#services">SERVICES</a>
+                            </li>
+                            <li class="li">
+                                <a href="#portfolio">PORTFOLIO</a>
+                            </li>
+                            <li class="li">
+                                <a href="#about">ABOUT</a>
+                            </li> 
+                            <li class="li">
+                                <a href="#contact">CONTACT</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <nav class="navbar">
-                <ul>
-                    <li class="li">
-                        <a href="#">HOME</a>
-                    </li>
-                    <li class="li">
-                        <a href="#">SERVICES</a>
-                    </li>
-                    <li class="li">
-                        <a href="#">PORTFOLIO</a>
-                    </li>
-                    <li class="li">
-                        <a href="#">ABOUT</a>
-                    </li> 
-                    <li class="li">
-                        <a href="#">CONTACT</a>
-                    </li>
-                </ul>
-            </nav>
         </header>
+        <div class="shadowX "></div>
         <main>
-            <article class="slider">
+            <article class="slider" id="home">
                 <div class="buttonl"></div>
-                <div class="buttonr"></div>
-                <img src="assets/img/phonever.png" class="photo-vertical">
-                <img src="assets/img/phonehor.png" class="photo-horizontal">
+                <div class="wrapper_for_slider item">
+
+                        <div class="screen_ver">
+                            <img src="assets/img/phonever.png" class="photo-vertical">
+                            <div class="off_screen_ver screen_visible"></div>
+                        </div>                      
+                        <div class="screen_hor">
+                            <img src="assets/img/phonehor.png" class="photo-horizontal">
+                            <div class="off_screen_hor screen_visible"></div>
+                        </div>  
+
+                </div>
+
+                <div class="buttonr"></div>    
+
+                <div class="wrapper_for_slider2 item">
+                    <div class="screen_main">
+                        <img src="assets/img/phone-group.png" class="phone-group">
+                    </div>                      
+                </div> 
+
             </article>
-            <article class="services">
+            <article class="services" id="services">
                 <div class="block1">
                     <h1>Our Services</h1>
                     <p>
@@ -113,15 +143,15 @@
                     </div>                         
                 </div>
             </article>
-            <article class="portfolio">
+            <article class="portfolio" id="portfolio">
                 <div class="portfolio-navigation">
                     <h1>Portfolio</h1>
                     <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
                     <div class="buttons">   
-                        <button id="button-all">All</button>
-                        <button>Web Design</button>
-                        <button>Graphic Design</button>
-                        <button>Artwork</button>
+                        <button id="button-all" class="single-button">All</button>
+                        <button class="single-button">Web Design</button>
+                        <button class="single-button">Graphic Design</button>
+                        <button class="single-button">Artwork</button>
                     </div> 
                 </div>
                 <div class="portfolio-pictures">
@@ -137,12 +167,10 @@
                     <img src="assets/img/pictures/picture10.png" class="picture">
                     <img src="assets/img/pictures/picture11.png" class="picture">
                     <img src="assets/img/pictures/picture12.png" class="picture">
-                    <img src="assets/img/pictures/picture10.png" class="picture">
-                    <img src="assets/img/pictures/picture11.png" class="picture">
                     <img src="assets/img/pictures/picture12.png" class="picture">
                 </div>
             </article>
-            <article class="about-us">
+            <article class="about-us" id="about">
                 <h1>About Us</h1>
                 <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                 <div class="persons">
@@ -181,19 +209,28 @@
                     </div>
                 </div>
             </article>
-            <article class="form">
+            <div class="block_message" id="message">
+                <div class="message">
+                    <h3>Письмо отправлено</h3>
+                    <p id="theme"></p>
+                    <p id="description"></p>
+                    <button type="button" id="button_close">OK</button>
+                </div>
+            </div>
+            <article class="form" id="contact">
+                
                 <h1>Get a Quote</h1>
                 <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                 <div class="enter-form">
                     <div class="main-form">
                         <form action="#" method="get" name="form" class="form-to-use">
-                            <input type="text"  name="Name" placeholder="Name (Required)" required class="name">
+                            <input type="text"  name="Name" placeholder="Name (Required)" required pattern="[A-Za-zА-яа-я-\s']" class="name">
                             <input type="email"  name="Mail" placeholder="Email (Required)" required class="mail">
-                            <input type="text"  name="Subject" placeholder="Subject" class="subject">
-                            <textarea name="description" placeholder="Describe your project in detail..." class="textarea"></textarea>
+                            <input type="text"  name="Subject" placeholder="Subject" class="subject" id="subject">
+                            <textarea name="description" placeholder="Describe your project in detail..." class="textarea" id="textarea"></textarea>
                             <button type="submit" class="form-button">Submit</button>
                         </form>
-                    </div>
+                    </div>       
                     <div class="information">
                         <h3>Contact Information</h3>
                         <p>Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.</p>
@@ -209,7 +246,7 @@
                     </div>
                 </div>
             </article>
-
+            
         </main>
         <footer>
             <p>&copy; Copyright2013</p>
@@ -220,5 +257,6 @@
                 <div class="contact-img linkedin"></div>
             </div>
         </footer>
+        <script src="script.js"></script>
     </body>
 </html>
